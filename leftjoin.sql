@@ -1,7 +1,7 @@
--- 1) O LEFT JOIN permite que todos os registros da tabela da esquerda sejam exibidos. Quando existe uma correspondência na tabela da direita, os dados são apresentados normalmente. Caso contrário, os campos da tabela da direita aparecem como NULL.
+-- 1) O LEFT JOIN apresenta todos os registros da tabela localizada à esquerda. Quando há informações relacionadas na tabela da direita, elas são incluídas no resultado. Se não houver relação, os campos correspondentes recebem NULL.
 
--- 2) Vantagens: Exibe todos os registros da tabela principal; ajuda a identificar informações que não possuem correspondência; permite reunir dados de diferentes tabelas em uma única consulta.
--- Desvantagens: Pode gerar valores NULL, exigindo um tratamento adequado; pode tornar as consultas mais complexas; em tabelas muito grandes, pode prejudicar o desempenho.
+-- 2) Vantagens: Permite consultar todos os registros da tabela principal; facilita localizar dados que não possuem correspondência; possibilita combinar informações de tabelas diferentes.
+-- Desvantagens: Pode apresentar campos com valores NULL; pode deixar as consultas mais difíceis de organizar; em tabelas com muitos registros, pode tornar a execução mais lenta.
 
 -- 3)
 select * from cliente;
@@ -18,4 +18,4 @@ select cliente.nome, loja.valor from cliente left join loja on cliente.id_client
 -- 7)
 select nome, idade from cliente order by idade desc limit 1;
 
--- 8) O LEFT JOIN retorna todos os registros da tabela à esquerda, mesmo quando não existem dados correspondentes na outra tabela. Já o INNER JOIN exibe somente os registros que possuem correspondência entre as duas tabelas.
+-- 8) Enquanto o LEFT JOIN mantém todos os registros da tabela da esquerda, mesmo que não encontre correspondentes, o INNER JOIN considera apenas os registros que possuem informações relacionadas nas duas tabelas.
